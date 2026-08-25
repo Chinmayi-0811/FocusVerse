@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Settings</title>
+
+<link rel="stylesheet"
+href="dashboard.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2 class="logo">
+FocusVerse
+</h2>
+
+<ul>
+
+<li>
+<a href="dashboard.html">
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="analytics.html">
+Analytics
+</a>
+</li>
+
+<li>
+<a href="music.html">
+Music
+</a>
+</li>
+
+<li class="active">
+<a href="settings.html">
+Settings
+</a>
+</li>
+
+</ul>
+
+<button
+class="logout-btn"
+onclick="logout()">
+
+Logout
+
+</button>
+
+</div>
+
+<div class="main-content">
+
+<h1>
+Settings ⚙️
+</h1>
+
+<br>
+
+<div class="dashboard-grid">
+
+<!-- Profile -->
+
+<div class="card">
+
+<h2>
+Profile
+</h2>
+
+<p>
+Username:
+</p>
+
+<h3 id="usernameText">
+User
+</h3>
+
+</div>
+
+<!-- Theme -->
+
+<div class="card">
+
+<h2>
+Theme
+</h2>
+
+<button onclick="toggleTheme()">
+
+Toggle Theme 🌙
+
+</button>
+
+</div>
+
+<!-- Goal -->
+
+<div class="card">
+
+<h2>
+Focus Goal
+</h2>
+
+<p>
+
+Complete 4 study sessions daily.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const username =
+localStorage.getItem("username");
+
+document.getElementById("usernameText")
+.innerText =
+username || "User";
+
+function logout() {
+
+window.location.href =
+"login.html";
+}
+
+function toggleTheme() {
+
+document.body.classList.toggle(
+"light-mode"
+);
+}
+
+</script>
+
+</body>
+</html>

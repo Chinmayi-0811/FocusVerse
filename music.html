@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Music</title>
+
+<link rel="stylesheet"
+href="dashboard.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2 class="logo">
+FocusVerse
+</h2>
+
+<ul>
+
+<li>
+<a href="dashboard.html">
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="analytics.html">
+Analytics
+</a>
+</li>
+
+<li class="active">
+<a href="music.html">
+Music
+</a>
+</li>
+
+<li>
+<a href="settings.html">
+Settings
+</a>
+</li>
+
+</ul>
+
+<button
+class="logout-btn"
+onclick="logout()">
+
+Logout
+
+</button>
+
+</div>
+
+<div class="main-content">
+
+<h1>
+Music Room 🎵
+</h1>
+
+<br>
+
+<div class="card">
+
+<h2>
+Ambient Sounds
+</h2>
+
+<div class="music-buttons">
+
+<button onclick="playRain()">
+🌧 Rain
+</button>
+
+<button onclick="playForest()">
+🌲 Forest
+</button>
+
+<button onclick="playLofi()">
+🎵 Lo-Fi
+</button>
+
+<button onclick="stopAudio()">
+⛔ Stop
+</button>
+
+</div>
+
+<br>
+
+<input
+type="range"
+id="volumeSlider"
+min="0"
+max="1"
+step="0.1"
+value="0.5">
+
+</div>
+
+</div>
+
+<audio
+id="rainAudio"
+src="sounds/rain.mp3"
+loop>
+</audio>
+
+<audio
+id="forestAudio"
+src="sounds/forest.mp3"
+loop>
+</audio>
+
+<audio
+id="lofiAudio"
+src="sounds/lofi.mp3"
+loop>
+</audio>
+
+<script>
+
+const rainAudio =
+document.getElementById("rainAudio");
+
+const forestAudio =
+document.getElementById("forestAudio");
+
+const lofiAudio =
+document.getElementById("lofiAudio");
+
+const volumeSlider =
+document.getElementById("volumeSlider");
+
+function stopAudio() {
+
+const audios = [
+
+rainAudio,
+forestAudio,
+lofiAudio
+
+];
+
+audios.forEach(audio => {
+
+audio.pause();
+
+audio.currentTime = 0;
+
+});
+}
+
+function playRain() {
+
+stopAudio();
+
+rainAudio.play();
+}
+
+function playForest() {
+
+stopAudio();
+
+forestAudio.play();
+}
+
+function playLofi() {
+
+stopAudio();
+
+lofiAudio.play();
+}
+
+volumeSlider.addEventListener("input", () => {
+
+const volume =
+volumeSlider.value;
+
+rainAudio.volume = volume;
+
+forestAudio.volume = volume;
+
+lofiAudio.volume = volume;
+
+});
+
+function logout() {
+
+window.location.href =
+"login.html";
+}
+
+</script>
+
+</body>
+</html>

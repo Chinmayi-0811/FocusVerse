@@ -1,0 +1,418 @@
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  display: flex;
+
+  font-family: 'Poppins', sans-serif;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b0f19,
+      #111827,
+      #1f2937
+    );
+
+  color: white;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+/* Sidebar */
+
+.sidebar {
+
+  width: 250px;
+
+  min-height: 100vh;
+
+  background:
+    rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(12px);
+
+  padding: 30px;
+
+  border-right:
+    1px solid rgba(255,255,255,0.1);
+
+  box-shadow:
+    4px 0 20px rgba(0,0,0,0.2);
+}
+
+.logo {
+
+  font-size: 32px;
+
+  font-weight: 700;
+
+  color: #00e5ff;
+
+  margin-bottom: 40px;
+}
+
+.sidebar ul {
+
+  list-style: none;
+}
+
+.sidebar li {
+
+  padding: 16px;
+
+  margin-bottom: 15px;
+
+  border-radius: 14px;
+
+  transition: 0.3s;
+
+  font-size: 18px;
+}
+
+.sidebar li:hover {
+
+  background:
+    rgba(255,255,255,0.1);
+
+  transform: translateX(5px);
+}
+
+.active {
+
+  background:
+    rgba(255,255,255,0.12);
+}
+
+.sidebar a {
+
+  text-decoration: none;
+
+  color: white;
+
+  display: block;
+}
+
+/* Logout */
+
+.logout-btn {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: #ff4d6d;
+
+  color: white;
+
+  margin-top: 40px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+
+  background: #ff758f;
+
+  transform: scale(1.03);
+}
+
+/* Main */
+
+.main-content {
+
+  flex: 1;
+
+  padding: 40px;
+
+  animation:
+    fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* Grid */
+
+.dashboard-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 30px;
+}
+
+/* Cards */
+
+.card {
+
+  background:
+    rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(12px);
+
+  padding: 30px;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.3);
+
+  transition: 0.3s;
+}
+
+.card:hover {
+
+  transform: translateY(-8px);
+}
+
+/* Timer */
+
+.timer-circle {
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  border: 8px solid #00e5ff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: auto;
+
+  font-size: 50px;
+
+  box-shadow:
+    0 0 20px #00e5ff;
+
+  animation:
+    glow 2s infinite alternate;
+}
+
+@keyframes glow {
+
+  from {
+
+    box-shadow:
+      0 0 15px #00e5ff;
+  }
+
+  to {
+
+    box-shadow:
+      0 0 35px #00e5ff;
+  }
+}
+
+.button-group {
+
+  margin-top: 25px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+}
+
+/* Buttons */
+
+button {
+
+  padding: 12px 20px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #00adb5;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+button:hover {
+
+  background: #00e5ff;
+
+  transform: scale(1.05);
+
+  box-shadow:
+    0 0 15px #00e5ff;
+}
+
+/* Tasks */
+
+.task-section {
+
+  display: flex;
+
+  gap: 10px;
+}
+
+input {
+
+  flex: 1;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  outline: none;
+}
+
+#taskList {
+
+  margin-top: 20px;
+}
+
+#taskList li {
+
+  list-style: none;
+
+  background:
+    rgba(255,255,255,0.1);
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  margin-bottom: 10px;
+
+  cursor: pointer;
+}
+
+/* Progress */
+
+.progress-bar {
+
+  width: 100%;
+
+  height: 18px;
+
+  background: #222;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  margin-top: 20px;
+}
+
+.progress {
+
+  width: 0%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00e5ff,
+      #7c4dff
+    );
+}
+
+/* Music */
+
+.music-buttons {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+/* Light Mode */
+
+.light-mode {
+
+  background: white;
+
+  color: black;
+}
+
+/* Background Glow */
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+
+  width: 500px;
+  height: 500px;
+
+  background:
+    rgba(0,229,255,0.15);
+
+  border-radius: 50%;
+
+  top: -150px;
+  right: -150px;
+
+  filter: blur(100px);
+
+  z-index: -1;
+}
+
+body::after {
+
+  content: "";
+
+  position: fixed;
+
+  width: 400px;
+  height: 400px;
+
+  background:
+    rgba(124,77,255,0.15);
+
+  border-radius: 50%;
+
+  bottom: -150px;
+  left: -150px;
+
+  filter: blur(100px);
+
+  z-index: -1;
+}
